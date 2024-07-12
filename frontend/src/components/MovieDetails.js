@@ -21,21 +21,22 @@ function MovieDetails() {
     }, [id]);
 
     return (
-        <div>
-            <h1>Movie Trailer</h1>
-            {trailer ? (
-                <iframe
-                    title="Movie Trailer"
-                    width="560"
-                    height="315"
-                    src={`https://www.youtube.com/embed/${trailer}`}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                ></iframe>
-            ) : (
-                <p>Loading...</p>
-            )}
+        <div className="container mt-5">
+            <div className="row justify-content-center">
+                <h1 className="text-center mb-4">Movie Trailer</h1>
+                {trailer ? (
+                    <iframe
+                        title="Movie Trailer"
+                        width="360"
+                        height="560"
+                        src={`https://www.youtube.com/embed/${trailer}`}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                    ></iframe>
+                ) : (
+                    <p>Loading...</p>
+                )}
+            </div>
         </div>
     );
 }

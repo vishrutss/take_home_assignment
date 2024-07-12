@@ -25,15 +25,28 @@ function SearchResults() {
     }, [query]);
 
     return (
-        <div>
-            <h1>Search Results</h1>
-            <ul>
-                {movies.map(movie => (
-                    <li key={movie.id}>
-                        <Link to={`/movie/${movie.id}`}>{movie.title}</Link>
-                    </li>
+        <div className="container mt-5">
+            <h1 className="text-center mb-4">Search Results for "{query}"</h1>
+            <div className="row">
+                {movies.map((movie) => (
+                    <div key={movie.id} className="col-md-4 mb-4">
+                        <div className="card">
+                            <img
+                                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                                className="card-img-top"
+                                alt={movie.title}
+                            />
+                            <div className="card-body">
+                                <h5 className="card-title">{movie.title}</h5>
+                                <p className="card-text">{movie.overview}</p>
+                                <Link to={`/movie/${movie.id}`} className="btn btn-primary">
+                                    View Trailer
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     );
 }

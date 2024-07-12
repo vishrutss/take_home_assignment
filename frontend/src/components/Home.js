@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Home = () => {
+function Home() {
     const [query, setQuery] = useState('');
     const navigate = useNavigate();
 
