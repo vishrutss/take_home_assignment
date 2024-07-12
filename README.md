@@ -29,3 +29,20 @@ This project is a Movie Search application built with a React frontend and a Dja
    ```bash
    git clone git@github.com:vishrutss/take_home_assignment.git
    cd take_home_assignment
+
+2. **Run the Django server**
+
+   ```bash
+   cd backend
+   python manage.py runserver
+
+3. **Run the React app**
+
+   ```bash
+   cd frontend
+   npm start
+
+4. **Open the browser and navigate to**
+
+   ```bash
+   http://localhost:3000/
