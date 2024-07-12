@@ -27,5 +27,5 @@ This project is a Movie Search application built with a React frontend and a Dja
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/your-username/movie-search-app.git
-   cd movie-search-app
+   git clone git@github.com:vishrutss/take_home_assignment.git
+   cd take_home_assignment
