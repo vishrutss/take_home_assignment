@@ -28,4 +28,4 @@ This project is a Movie Search application built with a React frontend and a Dja
 
    ```bash
    git clone git@github.com:vishrutss/take_home_assignment.git
-   cd movie-search-app
+   cd take_home_assignment
