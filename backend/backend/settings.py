@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,17 +24,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-gp(mwqn!-di29d+_o^+ds^8#vo#lbgqkim*lw$rgwhuw52lllx'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
-TMDB_API_KEY = '0025457dbf4a77cd60b5263597691bb3'
+TMDB_API_KEY = os.getenv('TMDB_API_KEY')
 
-YOUTUBE_API_KEY = 'AIzaSyByo_VJOZ9rKO7p-BEGsYUsyVe04o22GYc'
+YOUTUBE_API_KEY = os.getenv('YOUTUBE_API_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(os.getenv('DJANGO_DEBUG', False))
 
 ALLOWED_HOSTS = []
 
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Application definition
 
@@ -51,6 +56,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
